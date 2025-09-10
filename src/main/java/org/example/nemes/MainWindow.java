@@ -1,23 +1,31 @@
 package org.example.nemes;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MainWindow {
-    private JFrame window;
+    private JFrame frame;
 
     public MainWindow() {
         initialize();
     }
 
     private void initialize() {
-        window = new JFrame("Main Window");
-        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        window.setSize(400, 300);
-        window.setTitle("Swing Demo Application");
-        window.setLocationRelativeTo(null);
+        frame = new JFrame("Main Window");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(400, 300);
+        frame.setTitle("Swing Demo Application");
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(new BorderLayout(5, 5)); // default layout
+ 
+        frame.add(new JButton("Click NORTH"), BorderLayout.NORTH);
+        frame.add(new JButton("Click WEST"), BorderLayout.WEST);
+        frame.add(new JButton("Click EAST"), BorderLayout.EAST);
+        frame.add(new JButton("Click SOUTH"), BorderLayout.SOUTH);
+        frame.add(new JButton("Click CENTER"), BorderLayout.CENTER);
     }
 
     public void show() {
-        window.setVisible(true);
+        frame.setVisible(true);
     }
 }
